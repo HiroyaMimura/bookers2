@@ -16,7 +16,7 @@
         
         <% if user_signed_in? %>
       <li>
-        <%= link_to "Home", users_id_path %>
+        <%= link_to "Home", user_path(id: current_user) %>
       </li>
       <li>
         <%= link_to "Users", users_path %>
@@ -43,6 +43,7 @@
     <% end %>
       
   </header>
+ 
     <%= yield %>
     
     <footer>
