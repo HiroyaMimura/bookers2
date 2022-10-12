@@ -12,9 +12,13 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.new
+    @user = current_user
   end
 
   def edit
+    @book = Book.new
+    @user = current_user
   end
 
     private
