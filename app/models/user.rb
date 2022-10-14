@@ -5,6 +5,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+        validates :name,  uniqueness: { case_sensitive: false }, length: { minimum: 2, maximum: 20 }
+        validates :introduction, length: { maximum: 50 }
        
   def get_profile_image(width, height)
   unless profile_image.attached?
