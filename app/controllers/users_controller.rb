@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name,:introduction,:profile_image)
   end
-
+  
   def correct_user
     @user = User.find(params[:id])
     redirect_to user_path(current_user.id) unless @user == current_user
